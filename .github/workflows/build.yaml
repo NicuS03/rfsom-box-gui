@@ -71,7 +71,7 @@ jobs:
         echo "version=$app_version" >> "$GITHUB_OUTPUT"
         echo "can_create_release=$create_release" >> "$GITHUB_OUTPUT"
   build_and_deploy_for_kuiper:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     needs: identify_version
     env:
       CONTAINER_BASE_NAME: kuiper-container-basic
