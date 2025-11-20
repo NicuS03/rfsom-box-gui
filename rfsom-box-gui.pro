@@ -40,8 +40,13 @@ scripts.files += ./bin/testmode.sh
 share.path = $$INSTALL_LOCATION/share
 share.files = ./share/*
 
-systemd.path = /lib/systemd/system
-systemd.files = ./bin/packrf.service
+# Generate systemd service file from template
+systemd_template.input = ./bin/rfsom-box-gui.service.in
+systemd_template.output = ./bin/rfsom-box-gui.service
+QMAKE_SUBSTITUTES += systemd_template
+
+systemd.path = /$$INSTALL_LOCATION/lib/systemd/system
+systemd.files = ./bin/rfsom-box-gui.service
 
 target.path = $$INSTALL_LOCATION/bin
 permission.path = $$INSTALL_LOCATION/bin
