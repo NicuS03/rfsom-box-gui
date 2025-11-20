@@ -17,7 +17,6 @@ Architecture: @ARCHITECTURE@
 Multi-Arch: foreign
 Depends: ${misc:Depends}, ${shlibs:Depends},
          libiio0,
-         iio-utils,
          gpsd,
          gpsd-clients,
          bc
